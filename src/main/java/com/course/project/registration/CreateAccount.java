@@ -16,8 +16,9 @@ public class CreateAccount extends BasePage {
         super(driver);
     }
 
-    public WebElement createAccount(){
-        return createAccountBtn;
+    public RegistrationPage createAccountBtn(){
+        createAccountBtn.click();
+        return new RegistrationPage(driver);
     }
 
     }

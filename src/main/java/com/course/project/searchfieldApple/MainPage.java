@@ -4,6 +4,7 @@ import com.course.project.registration.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BasePage {
 
@@ -13,30 +14,19 @@ public class MainPage extends BasePage {
     @FindBy(name = "yfin-usr-qry")
     WebElement searchField;
 
-    @FindBy(id = "result-quotes-0")
-    WebElement dropdownMenu;
-
-    @FindBy(className = "search")
+    @FindBy(css = "#header-desktop-search-button")
     WebElement searchBtn;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement cookieButton() {
-        return cookieBtn;
-    }
 
-    public WebElement searchF() {
-        return searchField;
-    }
-
-    public WebElement dropMenu(){
-        return dropdownMenu;
-    }
-
-    public WebElement searchButton() {
-        return searchBtn;
+    public ApplePage searchAppleCompany(String name){
+        cookieBtn.click();
+        searchField.sendKeys(name);
+        searchBtn.click();
+        return new ApplePage(driver);
     }
 }
 

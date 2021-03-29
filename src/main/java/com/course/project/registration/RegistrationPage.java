@@ -3,6 +3,8 @@ package com.course.project.registration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 public class RegistrationPage extends BasePage {
     @FindBy(id = "usernamereg-firstName")
@@ -36,7 +38,30 @@ public class RegistrationPage extends BasePage {
         super(driver);
     }
 
-    public WebElement firstN() {
+    public void submitData(String name, String surname, String mail, String pass,String telephone, String day, String year) {
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(firstName), 4);
+        firstName.sendKeys(name);
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(lastName), 4);
+        lastName.sendKeys(surname);
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(emailAddress), 4);
+        emailAddress.sendKeys(mail);
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(password), 4);
+        password.sendKeys(pass);
+        phoneNumber.sendKeys(telephone);
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(phoneNumber), 4);
+
+        Select month = new Select(birthMonth);
+        month.selectByValue("3");
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(birthMonth), 4);
+        birthDate.sendKeys(day);
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(birthDate), 4);
+        birthYear.sendKeys(year);
+        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(birthYear), 4);
+        signUpBtn.click();
+    }
+
+
+ /*   public WebElement firstN() {
         return firstName;
     }
 
@@ -70,8 +95,9 @@ public class RegistrationPage extends BasePage {
 
     public WebElement signUp() {
         return signUpBtn;
-    }
+    }*/
 }
+
 
 
 

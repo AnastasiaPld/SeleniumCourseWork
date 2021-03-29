@@ -15,17 +15,18 @@ public class SignInPage extends BasePage {
         super(driver);
     }
 
-    public WebElement signIn(){
+    public CreateAccount SignInBtn(){
+        cookieBtn.click();
+        signInBtn.click();
 
-        return signInBtn;
+        return new CreateAccount(driver);
     }
 
-    public void cookieButton(){
-        cookieBtn.submit();
+
 
     }
 
-    }
+
 
 
 
