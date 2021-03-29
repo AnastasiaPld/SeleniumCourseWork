@@ -19,7 +19,7 @@ import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class StatisticalDataApple extends TestUtil {
+public class SearchFieldTest extends TestUtil {
     @DataProvider(name = "statistical-data")
     public static Object[][] dataProviderFromCsvFile() throws IOException, CsvException {
         return CsvReader.readCsvFile("src/test/resources/statistical-data.csv");

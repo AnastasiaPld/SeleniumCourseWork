@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class Registration extends TestUtil {
+public class RegistrationTest extends TestUtil {
 
     @DataProvider(name = "login-data")
     public static Object[][] dataProviderFromCsvFile() throws IOException, CsvException {

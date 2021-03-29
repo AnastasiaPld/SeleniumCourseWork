@@ -38,7 +38,7 @@ public class RegistrationPage extends BasePage {
         super(driver);
     }
 
-    public void submitData(String name, String surname, String mail, String pass,String telephone, String day, String year) {
+    public void submitData(String name, String surname, String mail, String pass, String telephone, String day, String year) {
         executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(firstName), 4);
         firstName.sendKeys(name);
         executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(lastName), 4);
@@ -49,7 +49,6 @@ public class RegistrationPage extends BasePage {
         password.sendKeys(pass);
         phoneNumber.sendKeys(telephone);
         executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(phoneNumber), 4);
-
         Select month = new Select(birthMonth);
         month.selectByValue("3");
         executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(birthMonth), 4);
@@ -61,41 +60,6 @@ public class RegistrationPage extends BasePage {
     }
 
 
- /*   public WebElement firstN() {
-        return firstName;
-    }
-
-    public WebElement lastN() {
-        return lastName;
-    }
-
-    public WebElement emailAdd() {
-        return emailAddress;
-    }
-
-    public WebElement pass() {
-        return password;
-    }
-
-    public WebElement phone() {
-        return phoneNumber;
-    }
-
-    public WebElement monthOfBirth() {
-        return birthMonth;
-    }
-
-    public WebElement dateOfBirth() {
-        return birthDate;
-    }
-
-    public WebElement yearOfBirth() {
-        return birthYear;
-    }
-
-    public WebElement signUp() {
-        return signUpBtn;
-    }*/
 }
 
 
