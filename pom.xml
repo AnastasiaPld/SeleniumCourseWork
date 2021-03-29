@@ -48,6 +48,8 @@
 </dependencies>
 
     <properties>
+        <encoding>UTF-8</encoding>
+
         <maven.compiler.source>13</maven.compiler.source>
         <maven.compiler.target>13</maven.compiler.target>
     </properties>
