@@ -7,17 +7,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ApplePage extends BasePage {
+public class PageOfCompany extends BasePage {
 
     @FindBy(xpath = "//span[text()='Forward Dividend & Yield']/../following-sibling::td")
     private WebElement dividend;
 
-    public ApplePage(WebDriver driver) {
+    public PageOfCompany(WebDriver driver) {
         super(driver);
     }
 
 
-    public String getAppleDividend() {
+    public String getDividend() {
         executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(dividend), 4);
 
         return dividend.getText();

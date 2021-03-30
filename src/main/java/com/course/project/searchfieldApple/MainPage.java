@@ -4,7 +4,6 @@ import com.course.project.registration.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BasePage {
 
@@ -22,11 +21,11 @@ public class MainPage extends BasePage {
     }
 
 
-    public ApplePage searchAppleCompany(String name){
+    public PageOfCompany searchAppleCompany(String name){
         cookieBtn.click();
         searchField.sendKeys(name);
         searchBtn.click();
-        return new ApplePage(driver);
+        return new PageOfCompany(driver);
     }
 }
 

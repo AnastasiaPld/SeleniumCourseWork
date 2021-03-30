@@ -1,10 +1,10 @@
 package com.course.project.tests;
 
 import com.course.project.base.TestUtil;
-import com.course.project.searchfieldApple.ApplePage;
+import com.course.project.searchfieldApple.PageOfCompany;
 import com.course.project.searchfieldApple.MainPage;
 import com.course.project.searchfieldApple.StatisticPage;
-import com.course.project.searchfieldApple.Statistics;
+import com.course.project.searchfieldApple.StatisticsSection;
 import com.course.project.utils.CsvReader;
 import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class SearchFieldTest extends TestUtil {
     @DataProvider(name = "statistical-data")
@@ -26,13 +25,13 @@ public class SearchFieldTest extends TestUtil {
         MainPage mainpage = new MainPage(driver);
         mainpage.searchAppleCompany(firmA);
 
-        ApplePage applepage = new ApplePage(driver);
-        applepage.getAppleDividend();
+        PageOfCompany pageOfCompany = new PageOfCompany(driver);
+        pageOfCompany.getDividend();
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(applepage.getAppleDividend(), number);
+        softAssert.assertEquals(pageOfCompany.getDividend(), number);
 
-        Statistics statisticNewPage = new Statistics(driver);
+        StatisticsSection statisticNewPage = new StatisticsSection(driver);
         statisticNewPage.newPageStatistic();
 
         StatisticPage statisticBook= new StatisticPage(driver);
