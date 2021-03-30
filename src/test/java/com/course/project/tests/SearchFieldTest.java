@@ -21,16 +21,13 @@ public class SearchFieldTest extends TestUtil {
     }
 
     @Test(dataProvider = "statistical-data")
-    public void executeSearch(String firmA, String number, String price) throws InterruptedException, IOException, CsvException {
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public void executeSearch(String firmA, String number, String price) throws IOException, CsvException {
 
         MainPage mainpage = new MainPage(driver);
         mainpage.searchAppleCompany(firmA);
 
         ApplePage applepage = new ApplePage(driver);
         applepage.getAppleDividend();
-
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(applepage.getAppleDividend(), number);

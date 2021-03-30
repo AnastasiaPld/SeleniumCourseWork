@@ -1,5 +1,6 @@
 package com.course.project.registration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -58,6 +59,7 @@ public class RegistrationPage extends BasePage {
         executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(birthYear), 4);
         signUpBtn.click();
     }
+
 
 
 }
