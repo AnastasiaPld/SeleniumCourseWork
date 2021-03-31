@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
@@ -29,9 +30,12 @@ public class DriverFactory {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
+        options.setExperimentalOption("excludeSwitches",
+                Arrays.asList("disable-popup-blocking"));
         driver.manage().timeouts().implicitlyWait(wait, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
+
 
     }
 }
